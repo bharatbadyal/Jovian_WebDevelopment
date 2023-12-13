@@ -15,3 +15,16 @@ function sum(previousResult, currentValue) {
 
 const result = arr.reduce(sum);
 console.log(result);
+
+function addPrices(prevResult, currValue) {
+  console.log(prevResult, currValue);
+  let newPrice = prevResult.price + currValue.price;
+  return { price: newPrice };
+}
+let cart = [
+  { price: 10000, name: "Iphone" },
+  { price: 500, name: "backcover" },
+  { price: 250, name: "glass" },
+];
+const totalPrice = cart.reduce(addPrices);
+console.log(totalPrice.price);
